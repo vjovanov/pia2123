@@ -14,8 +14,9 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
+                    <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <DIV ALIGN="Center">
+                        
                         <h3><h:outputText value="#{manageUser.selected}" style="font-size: 23pt"/></h3>
                         <br/>
                         <webuijsf:textField id="textfield1" label="Lokacija:" required="true" style="font-size: 15pt" text="#{manageUser.lab.location}"/><br/>
@@ -24,9 +25,13 @@
                         <webuijsf:textField id="textfield4" label="Ima li tablu:" required="true" style="font-size: 15pt" text="#{manageUser.lab.hasBlackboard}"/><br/>
                         <webuijsf:textField id="textfield5" label="Ima li projektor:" required="true" style="font-size: 15pt" text="#{manageUser.lab.hasProjector}"/><br/>
                         
-                        <webuijsf:button actionExpression="#{manageUser.editLab}" id="button2" text="Rezrvacija laboratorije" style = "font-size: 15pt"/>
-                        </DIV>
+                        <webuijsf:button actionExpression="#{manageUser.editLab}" id="button2" text="Izmena podataka laboratorije" style = "font-size: 15pt"/>
+                        
                     </webuijsf:form>
+                    <webuijsf:form id="form2">
+                            <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
+                    </webuijsf:form>
+                    </DIV>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>

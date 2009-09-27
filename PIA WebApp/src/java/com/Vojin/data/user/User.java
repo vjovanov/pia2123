@@ -471,7 +471,7 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        
+        int reservedLongitude = 0;
         reservation.setDatum(new java.sql.Date(selectedDate.getTime()).toString());
         int reservedTime = 0;
         Calendar vreme = new GregorianCalendar();
@@ -500,22 +500,19 @@ public class User {
                    pst.executeUpdate();
                } else {
                    reservedTime = res.getInt("PocevOd");
-                   for (int i=0; i<reservation.getTrajanje(); i++){
-                       if (reservedTime == reservation.getPocevOd()){
-                           result = "already_reserved";
-                       }
-                       reservedTime++;
-                   }
-                   if(result==null){
+                   reservedLongitude = res.getInt("Trajanje");
+                   if(((reservedTime+reservedLongitude)<reservation.getPocevOd()) || ((reservation.getPocevOd()+reservation.getTrajanje())<reservedTime)){
                        pst = conn.prepareStatement("INSERT INTO rezervacija (sid, korisnik, Namena,Datum,PocevOd,Trajanje,datumRezervisanja) VALUES (?,?,?,?,?,?,?)");
                        pst.setInt(1, selectedRes);
-                       pst.setInt(2, kId);
+                       pst.setInt(2, user.getKId());
                        pst.setString(3, reservation.getNamena());
                        pst.setString(4, reservation.getDatum());
                        pst.setString(5, new java.sql.Time(vreme.getTime().getTime()).toString());
                        pst.setInt(6, reservation.getTrajanje());
                        pst.setString(7, new java.sql.Timestamp(new java.util.Date().getTime()).toString());
                        pst.executeUpdate();
+                   } else {
+                       result = "already_reserved";
                    }
                }
                if(result==null){

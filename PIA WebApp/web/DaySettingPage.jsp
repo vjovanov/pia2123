@@ -16,9 +16,12 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <webuijsf:calendar id="calendar" selectedDate="#{manageUser.selectedDate}" minDate="#{manageUser.dateNow}" required="true" style="font-size: 15pt" /><br/>
-                        <webuijsf:button actionExpression="#{manageUser.daySet}" id="button1" text="Postavi izabrani dan za neradni" style = "font-size: 15pt"/><br/>
+                        <webuijsf:calendar id="calendar" selectedDate="#{manageUser.selectedDate}" minDate="#{manageUser.dateNow}" required="true" style="font-size: 15pt" /><br/>                        
                         <webuijsf:textField id="textfield1" label="Unesi razlog:" required="true" style="font-size: 15pt" text="#{manageUser.reason}"/><br/>
+                        <webuijsf:button actionExpression="#{manageUser.daySet}" id="button1" text="Postavi izabrani dan za neradni" style = "font-size: 15pt"/><br/>
+                    </webuijsf:form>
+                    <webuijsf:form id="form2">
+                            <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     </DIV>
                 </webuijsf:body>

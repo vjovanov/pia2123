@@ -21,6 +21,9 @@
                         <h:outputText id="text3" value="Rezervisana dana #{user.reservation.datum} sa pocetkom u #{user.reservation.pocevOd} i trajanjem od #{user.reservation.trajanje}" style="font-size: 20pt"/><br/>
                         <webuijsf:button actionExpression="#{user.reservationDelete}" id="button1" text="Brisanje rezervacije" style = "font-size: 15pt"/>
                     </webuijsf:form>
+                    <webuijsf:form id="form2">
+                            <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
+                    </webuijsf:form>
                     </DIV>
                 </webuijsf:body>
             </webuijsf:html>

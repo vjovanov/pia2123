@@ -14,9 +14,12 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
+                    <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <h:outputText value="#{userReg.registerStatus}" style="font-size: 30pt"/>
+                        <h:outputText value="#{userReg.registerStatus}" style="font-size: 30pt"/><br/>
+                        <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
                     </webuijsf:form>
+                    </DIV>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>

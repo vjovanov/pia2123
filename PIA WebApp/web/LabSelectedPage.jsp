@@ -14,8 +14,8 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
+                    <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <DIV ALIGN="Center">
                         <h3><h:outputText value="#{labmanager.selected}" style="font-size: 23pt"/></h3>
                         <br/>
                         <table width="30%" border="3">
@@ -32,9 +32,12 @@
                         </table><br/><br/>
                         <webuijsf:calendar id="calendar" selectedDate="#{labmanager.selectedDate}" minDate="#{labmanager.dateNow}" required="true" style="font-size: 15pt" />
                         <br/>
-                        <webuijsf:button actionExpression="#{labmanager.laboratoryReservation}" id="button2" text="Rezrvacija laboratorije" style = "font-size: 15pt"/>
-                        </DIV>
+                        <webuijsf:button actionExpression="#{labmanager.laboratoryReservation}" id="button2" text="Rezrvacija laboratorije" style = "font-size: 15pt"/>                        
                     </webuijsf:form>
+                    <webuijsf:form id="form2">
+                            <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
+                    </webuijsf:form>
+                    </DIV>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>
