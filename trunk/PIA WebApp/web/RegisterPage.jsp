@@ -24,6 +24,9 @@
                         <br/>
                         <webuijsf:button id="button1" actionExpression="#{userReg.userRegister}" text="Registrujte se" style = "font-size: 15pt"/>
                     </webuijsf:form>
+                    <webuijsf:form id="form2">
+                            <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
+                    </webuijsf:form>
                     </DIV>
                 </webuijsf:body>
             </webuijsf:html>

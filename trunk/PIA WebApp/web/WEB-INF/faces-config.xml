@@ -148,10 +148,6 @@
             <to-view-id>/UserSelectionPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>no_users</from-outcome>
-            <to-view-id>/NoMoreRequestsPage.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>add_user</from-outcome>
             <to-view-id>/AddUserPage.jsp</to-view-id>
         </navigation-case>
@@ -162,6 +158,10 @@
         <navigation-case>
             <from-outcome>day_page</from-outcome>
             <to-view-id>/DaySettingPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>no_users</from-outcome>
+            <to-view-id>/NoMoreUsersPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -183,6 +183,10 @@
         <navigation-case>
             <from-outcome>loaded_lab_characteristics</from-outcome>
             <to-view-id>/LabSelectedPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -208,6 +212,10 @@
             <from-outcome>no_reservations</from-outcome>
             <to-view-id>/NoMoreReservationsPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>reserve</from-outcome>
+            <to-view-id>/UserReservationDetailPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>LabSelectedPage</managed-bean-name>
@@ -223,6 +231,10 @@
         <navigation-case>
             <from-outcome>izabrana_nedelja</from-outcome>
             <to-view-id>/LabReservationPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/LabListingPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -244,6 +256,10 @@
         <navigation-case>
             <from-outcome>no_error</from-outcome>
             <to-view-id>/RequestHandledPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/LoginPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -332,16 +348,20 @@
             <to-view-id>/UserSelectionPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>no_users</from-outcome>
-            <to-view-id>/NoMoreRequestsPage.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>reservations_loaded</from-outcome>
             <to-view-id>/UserReservationListPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserSelectionPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>no_reservations</from-outcome>
-            <to-view-id>/NoMoreReservationsPage.jsp</to-view-id>
+            <to-view-id>/AdminNoMoreReservationsPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>no_users</from-outcome>
+            <to-view-id>/NoMoreUsersPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -357,6 +377,10 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>user_added</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
             <to-view-id>/AdminLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -375,6 +399,10 @@
             <from-outcome>loaded_lab_characteristics</from-outcome>
             <to-view-id>/SelectedLabEdit.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>SelectedLabEdit</managed-bean-name>
@@ -391,6 +419,10 @@
             <from-outcome>labs_loaded</from-outcome>
             <to-view-id>/LabManagePage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/LabManagePage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>DaySettingPage</managed-bean-name>
@@ -405,6 +437,10 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>day_added</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
             <to-view-id>/AdminLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -424,8 +460,8 @@
             <to-view-id>/SelectedREservationPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>reserve</from-outcome>
-            <to-view-id>/UserReservationDetailPage.jsp</to-view-id>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -452,6 +488,10 @@
             <from-outcome>no_reservations</from-outcome>
             <to-view-id>/NoMoreReservationsPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/ReservationListPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>UserReservationListPage</managed-bean-name>
@@ -460,10 +500,6 @@
     </managed-bean>
     <navigation-rule>
         <from-view-id>/UserReservationListPage.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>no_reservations</from-outcome>
-            <to-view-id>/NoMoreReservationsPage.jsp</to-view-id>
-        </navigation-case>
         <navigation-case>
             <from-outcome>error</from-outcome>
             <to-view-id>/ErrorPage.jsp</to-view-id>
@@ -476,6 +512,14 @@
             <from-outcome>reservation</from-outcome>
             <to-view-id>/AdminrReservationPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserManagePage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>no_reservations</from-outcome>
+            <to-view-id>/AdminNoMoreReservationsPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>SelectedUserReservationPage</managed-bean-name>
@@ -485,12 +529,16 @@
     <navigation-rule>
         <from-view-id>/SelectedUserReservationPage.jsp</from-view-id>
         <navigation-case>
-            <from-outcome>no_reservations</from-outcome>
-            <to-view-id>/NoMoreReservationsPage.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>reservations_loaded</from-outcome>
             <to-view-id>/UserReservationListPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserReservationListPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>no_reservations</from-outcome>
+            <to-view-id>/AdminNoMoreReservationsPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -509,8 +557,12 @@
             <to-view-id>/UserReservationListPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserManagePage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
             <from-outcome>already_reserved</from-outcome>
-            <to-view-id>/AlreadyReservedPage.jsp</to-view-id>
+            <to-view-id>/AdminAlreadyReservedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -541,12 +593,96 @@
             <from-outcome>already_reserved</from-outcome>
             <to-view-id>/AlreadyReservedPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserLoggedPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/NoMoreRequestsPage.jsp</from-view-id>
         <navigation-case>
             <from-outcome>back</from-outcome>
             <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>AdminNoMoreReservationsPage</managed-bean-name>
+        <managed-bean-class>piawebapp.AdminNoMoreReservationsPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/AdminNoMoreReservationsPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>reservation</from-outcome>
+            <to-view-id>/AdminrReservationPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserManagePage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>NoMoreUsersPage</managed-bean-name>
+        <managed-bean-class>piawebapp.NoMoreUsersPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/NoMoreUsersPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>AdminAlreadyReservedPage</managed-bean-name>
+        <managed-bean-class>piawebapp.AdminAlreadyReservedPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/AdminAlreadyReservedPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminrReservationPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>BadPassOrUserPage</managed-bean-name>
+        <managed-bean-class>piawebapp.BadPassOrUserPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/BadPassOrUserPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/LoginPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/RequestHandledPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/LoginPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/NoMoreReservationsPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserLoggedPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/AlreadyReservedPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/UserReservationDetailPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/LabReservationPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/LabSelectedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

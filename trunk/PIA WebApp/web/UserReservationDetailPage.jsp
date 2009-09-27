@@ -14,6 +14,7 @@
                     <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
                 </webuijsf:head>
                 <webuijsf:body id="body1" style="-rave-layout: grid">
+                    <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
                         <h:outputText value="Izaberi laboratoriju" style="font-size: 15pt"/><br/>
                         <webuijsf:listbox selected="#{user.selectedRes}" id="listbox1" items="#{user.lista}" style="font-size: 15pt" /><br/>
@@ -24,6 +25,10 @@
                         <webuijsf:textField id="text3" label="Unesi trajanje zeljenog termina" required="true" style="font-size: 15pt" text="#{user.reservation.trajanje}"/><br/>
                         <webuijsf:button actionExpression="#{user.tryReservation}" id="button2" text="Rezervisi!" style = "font-size: 15pt"/>
                     </webuijsf:form>
+                    <webuijsf:form id="form2">
+                            <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
+                    </webuijsf:form>
+                    </DIV>
                 </webuijsf:body>
             </webuijsf:html>
         </webuijsf:page>

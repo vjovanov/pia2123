@@ -19,7 +19,7 @@
                         
                             <webuijsf:listbox rows="5"  required="true" selected="#{manageUser.selectedUser}" id="listbox1" items="#{manageUser.userList}" style="font-size: 15pt" />
                             <br/>
-                            <webuijsf:button actionExpression="#{manageUser.selectedUserManage}" id="button1" text="Pregled izabranog zahteva" style = "font-size: 15pt"/><br/>
+                            <webuijsf:button actionExpression="#{manageUser.selectedUserManage}" id="button1" text="Pregled podataka korisnika" style = "font-size: 15pt"/><br/>
                     </webuijsf:form>        
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>

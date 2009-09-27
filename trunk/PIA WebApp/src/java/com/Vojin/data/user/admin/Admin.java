@@ -319,7 +319,8 @@ public class Admin {
         PreparedStatement pst = null;       
         ResultSet res = null;
 
-        try {                                
+        try {
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("select username from korisnik where isAdmin=0");
                 res = pst.executeQuery();
                 while(res.next()){
@@ -752,6 +753,7 @@ public class Admin {
         ResultSet res = null;        
         reservation.setDatum(new java.sql.Date(selectedDate.getTime()).toString());
         int reservedTime = 0;
+        int reservedLongitude = 0;
         Calendar vreme = new GregorianCalendar();
         vreme.set(Calendar.HOUR_OF_DAY, reservation.getPocevOd());
         vreme.set(Calendar.MINUTE, 0);
@@ -777,13 +779,8 @@ public class Admin {
                    pst.executeUpdate();
                } else {
                    reservedTime = res.getInt("PocevOd");
-                   for (int i=0; i<reservation.getTrajanje(); i++){
-                       if (reservedTime == reservation.getPocevOd()){
-                           result = "already_reserved";
-                       }
-                       reservedTime++;
-                   }
-                   if(result==null){
+                   reservedLongitude = res.getInt("Trajanje");
+                   if(((reservedTime+reservedLongitude)<reservation.getPocevOd()) || ((reservation.getPocevOd()+reservation.getTrajanje())<reservedTime)){
                        pst = conn.prepareStatement("INSERT INTO rezervacija (sid, korisnik, Namena,Datum,PocevOd,Trajanje,datumRezervisanja) VALUES (?,?,?,?,?,?,?)");
                        pst.setInt(1, selectedRes);
                        pst.setInt(2, user.getKId());
@@ -793,6 +790,8 @@ public class Admin {
                        pst.setInt(6, reservation.getTrajanje());
                        pst.setString(7, new java.sql.Timestamp(new java.util.Date().getTime()).toString());
                        pst.executeUpdate();
+                   } else {
+                       result = "already_reserved";
                    }
                }
                if(result==null){
