@@ -14,16 +14,27 @@ import java.sql.PreparedStatement;
  * @author Administrator
  */
 public class ConnectionManager {
+    private static final ConnectionManager INSTANCE = new ConnectionManager();
 
-    public ConnectionManager() {
+    public static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/lab_rezervacija";
+    public static final String USERNAME = "root";
+    public static final String PASSWORD = "Roces1";
+
+    private ConnectionManager() {
+      
     }
-    public void connectionInitialisation (Connection conn, Class c, String result){
+
+    public static final ConnectionManager getInstance() {
+        return INSTANCE;
+    }
+
+    public Connection create (){
         try{
-            c = Class.forName("com.mysql.jdbc.Driver");
+            Class c = Class.forName("com.mysql.jdbc.Driver");
             c.newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+            return DriverManager.getConnection(CONNECTION_STRING,USERNAME,PASSWORD);
         } catch ( Exception ex){
-          result = "error";
+          throw new RuntimeException("DB connection failure");
         }
     }
     public void connectionClose (Connection conn, PreparedStatement pst, String result){
