@@ -39,9 +39,23 @@ public class Admin {
     private String reason = null;
     private ReservationData reservation = new ReservationData();
     private int selectedRes = 0;
+    private ArrayList<Option> daNe = new ArrayList<Option>();
 
     public Admin() {
+        daNe = new ArrayList<Option>();
+        daNe.add(new Option(1, "da"));
+        daNe.add(new Option(0, "ne"));
     }
+
+    public ArrayList<Option> getDaNe() {
+        return daNe;
+    }
+
+    public void setDaNe(ArrayList<Option> daNe) {
+        this.daNe = daNe;
+    }
+
+
 
     public ReservationData getReservation() {
         return reservation;
