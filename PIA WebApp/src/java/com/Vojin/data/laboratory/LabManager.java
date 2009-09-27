@@ -5,6 +5,7 @@
 
 package com.Vojin.data.laboratory;
 
+import com.Vojin.data.ConnectionManager;
 import com.Vojin.data.DayShift;
 import com.Vojin.data.LaboratoryData;
 import com.Vojin.data.Schedule;
@@ -101,12 +102,9 @@ public class LabManager {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
-
-        try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
-
+       
+        try {               
+               conn = ConnectionManager.getInstance().create();
 
                pst = conn.prepareStatement("select naziv from sala");
                res = pst.executeQuery();
@@ -132,11 +130,9 @@ public class LabManager {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
-
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from sala where naziv=?");
@@ -177,16 +173,14 @@ public class LabManager {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        ResultSet resUser = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");        
+        ResultSet resUser = null;        
         int hourOfDay = 0;
         DayShift week = null;
         int shiftTime = 0;
         String text = null;
 
-        try {
-            c.newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {            
+            conn = ConnectionManager.getInstance().create();
 
             for( int i=0; i<7; i++){
                 cal2.setTime(cal.getTime());

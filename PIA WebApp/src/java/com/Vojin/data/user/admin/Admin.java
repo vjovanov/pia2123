@@ -1,5 +1,6 @@
 package com.Vojin.data.user.admin;
 
+import com.Vojin.data.ConnectionManager;
 import com.Vojin.data.LaboratoryData;
 import com.Vojin.data.RequestData;
 import com.Vojin.data.ReservationData;
@@ -167,12 +168,11 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
         ResultSet res = null;
 
         try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+                
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("select * from zahtevi_registracije where status=0");
                 res = pst.executeQuery();
                 while(res.next()){
@@ -201,14 +201,12 @@ public class Admin {
     public String selectedUserReqeust() throws ClassNotFoundException, SQLException{
         String result = null;
         Connection conn = null;
-        PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        PreparedStatement pst = null;       
         ResultSet res = null;
         userRequest = new RequestData();
 
-        try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {                
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("select * from zahtevi_registracije where username=?");
                 pst.setString( 1, selectedRequest);
                 res = pst.executeQuery();
@@ -244,12 +242,10 @@ public class Admin {
     public String acceptRequest() throws ClassNotFoundException, SQLException{
         String result = null;
         Connection conn = null;
-        PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        PreparedStatement pst = null;        
         ResultSet res = null;
-        try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {                
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("update zahtevi_registracije set vreme_odluke=? where zId=?");
                 pst.setTimestamp( 1, new Timestamp(new Date().getTime()));
                 pst.setInt( 2, userRequest.getZId());
@@ -287,12 +283,10 @@ public class Admin {
     public String denyRequest() throws ClassNotFoundException, SQLException{
         String result = null;
         Connection conn = null;
-        PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        PreparedStatement pst = null;        
         ResultSet res = null;
-        try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {                
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("update zahtevi_registracije set vreme_odluke=? where zId=?");
                 pst.setTimestamp( 1, new Timestamp(new Date().getTime()));
                 pst.setInt( 2, userRequest.getZId());
@@ -322,13 +316,10 @@ public class Admin {
         userList.clear();
         String result = null;
         Connection conn = null;
-        PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        PreparedStatement pst = null;       
         ResultSet res = null;
 
-        try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {                                
                 pst = conn.prepareStatement("select username from korisnik where isAdmin=0");
                 res = pst.executeQuery();
                 while(res.next()){
@@ -356,13 +347,12 @@ public class Admin {
         user = new UserData();
         String result = null;
         Connection conn = null;
-        PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        PreparedStatement pst = null;        
         ResultSet res = null;
 
         try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+                
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("select * from korisnik where username=?");
                 pst.setString(1, selectedUser);
                 res = pst.executeQuery();
@@ -393,13 +383,12 @@ public class Admin {
     public String deleteUser() throws ClassNotFoundException, SQLException{
         String result = null;
         Connection conn = null;
-        PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        PreparedStatement pst = null;        
         ResultSet res = null;
 
         try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+                
+                conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("delete from rezervacija where korisnik=?");
                 pst.setInt(1, user.getKId());
                 pst.executeUpdate();
@@ -426,11 +415,10 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");       
+        
 
         try {
-                c.newInstance();
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+            conn = ConnectionManager.getInstance().create();
                 pst = conn.prepareStatement("insert into korisnik (username, lozinka, ime, prezime, email, funkcija) values (?,?,?,?,?,?)");
                 pst.setString(1, user.getUsername());
                 pst.setString(2, user.getPassword());
@@ -461,13 +449,8 @@ public class Admin {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
-
-        try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
-
-
+        try {              
+               conn = ConnectionManager.getInstance().create();
                pst = conn.prepareStatement("select naziv from sala");
                res = pst.executeQuery();
                while (res.next()){
@@ -492,12 +475,10 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        ResultSet res = null;        
 
-        try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from sala where naziv=?");
@@ -532,14 +513,10 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        ResultSet res = null;        
 
-        try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
-
-
+        try {               
+               conn = ConnectionManager.getInstance().create();
                pst = conn.prepareStatement("update sala set Lokacija=? where sid=?");
                pst.setString(1, lab.getLocation());
                pst.setInt(2, lab.getSId());
@@ -583,13 +560,11 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        ResultSet res = null;        
         int labCount = 0;
 
-        try {
-            c.newInstance();
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {            
+            conn = ConnectionManager.getInstance().create();
 
             pst = conn.prepareStatement("select sid from sala");
             res = pst.executeQuery();
@@ -627,12 +602,10 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        ResultSet res = null;        
 
-        try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from rezervacija where korisnik=?");
@@ -666,11 +639,11 @@ public class Admin {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from rezervacija where rid=?");
@@ -713,11 +686,11 @@ public class Admin {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
                pst = conn.prepareStatement("delete from rezervacija where rid=?");
                pst.setInt(1, reservation.getRId());
@@ -745,11 +718,11 @@ public class Admin {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from sala");
@@ -776,17 +749,15 @@ public class Admin {
         String result = null;
         Connection conn = null;
         PreparedStatement pst = null;
-        ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        ResultSet res = null;        
         reservation.setDatum(new java.sql.Date(selectedDate.getTime()).toString());
         int reservedTime = 0;
         Calendar vreme = new GregorianCalendar();
         vreme.set(Calendar.HOUR_OF_DAY, reservation.getPocevOd());
         vreme.set(Calendar.MINUTE, 0);
         vreme.set(Calendar.SECOND, 0);
-        try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+        try {               
+               conn = ConnectionManager.getInstance().create();
 
                pst = conn.prepareStatement("select * from rezervacija where sid=? and datum=?");
                pst.setInt(1, selectedRes);

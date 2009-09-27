@@ -5,6 +5,7 @@
 
 package com.Vojin.data.user;
 
+import com.Vojin.data.ConnectionManager;
 import com.Vojin.data.LaboratoryData;
 import com.Vojin.data.ReservationData;
 import com.Vojin.data.UserData;
@@ -210,10 +211,10 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
          try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
                pst = conn.prepareStatement("select * from korisnik where username=? and lozinka=?");
                pst.setString(1, username);
                pst.setString(2, password);
@@ -252,11 +253,11 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
        
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from korisnik where username=?");
@@ -321,11 +322,11 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from rezervacija where korisnik=?");
@@ -359,11 +360,11 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from rezervacija where rid=?");
@@ -407,11 +408,11 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
                pst = conn.prepareStatement("delete from rezervacija where rid=?");
                pst.setInt(1, reservation.getRId());
@@ -439,11 +440,11 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
 
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
 
                pst = conn.prepareStatement("select * from sala");
@@ -470,7 +471,7 @@ public class User {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet res = null;
-        Class c = Class.forName("com.mysql.jdbc.Driver");
+        
         reservation.setDatum(new java.sql.Date(selectedDate.getTime()).toString());
         int reservedTime = 0;
         Calendar vreme = new GregorianCalendar();
@@ -478,8 +479,8 @@ public class User {
         vreme.set(Calendar.MINUTE, 0);
         vreme.set(Calendar.SECOND, 0);
         try {
-               c.newInstance();
-               conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab_rezervacija","root","jebaga");
+               
+               conn = ConnectionManager.getInstance().create();
 
                pst = conn.prepareStatement("select * from rezervacija where sid=? and datum=?");
                pst.setInt(1, selectedRes);
