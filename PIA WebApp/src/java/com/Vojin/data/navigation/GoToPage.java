@@ -25,4 +25,7 @@ public class GoToPage {
     public String manageReservation(){
         return "reservation";
     }
+    public String back(){
+        return "back";
+    }
 }

@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import javax.faces.context.FacesContext;
 
 
 /**
@@ -42,6 +41,7 @@ public class User {
     private int selected = 0;
     private ReservationData reservation = new ReservationData();
     private Date selectedDate = null;
+    private Date dateNow = new Date();
     private int selectedRes = 0;
     private LaboratoryData lab = new LaboratoryData();
 
@@ -55,6 +55,14 @@ public class User {
 
     public void setLab(LaboratoryData lab) {
         this.lab = lab;
+    }
+
+    public Date getDateNow() {
+        return dateNow;
+    }
+
+    public void setDateNow(Date dateNow) {
+        this.dateNow = dateNow;
     }
 
 
@@ -482,7 +490,7 @@ public class User {
                if (!res.next()){
                    pst = conn.prepareStatement("INSERT INTO rezervacija (sid, korisnik, Namena,Datum,PocevOd,Trajanje,datumRezervisanja) VALUES (?,?,?,?,?,?,?)");
                    pst.setInt(1, selectedRes);
-                   pst.setInt(2, user.getKId());
+                   pst.setInt(2, kId);
                    pst.setString(3, reservation.getNamena());
                    pst.setString(4, reservation.getDatum());
                    pst.setString(5, new java.sql.Time(vreme.getTime().getTime()).toString());
@@ -500,7 +508,7 @@ public class User {
                    if(result==null){
                        pst = conn.prepareStatement("INSERT INTO rezervacija (sid, korisnik, Namena,Datum,PocevOd,Trajanje,datumRezervisanja) VALUES (?,?,?,?,?,?,?)");
                        pst.setInt(1, selectedRes);
-                       pst.setInt(2, user.getKId());
+                       pst.setInt(2, kId);
                        pst.setString(3, reservation.getNamena());
                        pst.setString(4, reservation.getDatum());
                        pst.setString(5, new java.sql.Time(vreme.getTime().getTime()).toString());
