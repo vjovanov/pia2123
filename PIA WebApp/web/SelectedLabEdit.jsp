@@ -22,8 +22,11 @@
                         <webuijsf:textField id="textfield1" label="Lokacija:" required="true" style="font-size: 15pt" text="#{manageUser.lab.location}"/><br/>
                         <webuijsf:textField id="textfield2" label="Kapacitet:" required="true" style="font-size: 15pt" text="#{manageUser.lab.capacity}"/><br/>
                         <webuijsf:textField id="textfield3" label="Broj racunara:" required="true" style="font-size: 15pt" text="#{manageUser.lab.pcNumber}"/><br/>
-                        <webuijsf:textField id="textfield4" label="Ima li tablu:" required="true" style="font-size: 15pt" text="#{manageUser.lab.hasBlackboard}"/><br/>
-                        <webuijsf:textField id="textfield5" label="Ima li projektor:" required="true" style="font-size: 15pt" text="#{manageUser.lab.hasProjector}"/><br/>
+
+                        <webuijsf:listbox label="Da li ima tablu" rows="1" selected="#{manageUser.lab.hasBlackboard}" id="listbox1" items="#{manageUser.daNe}" style="font-size: 15pt" /><br/>
+                        <webuijsf:listbox label="Da li ima projektor" rows="1" selected="#{manageUser.lab.hasProjector}" id="listbox2" items="#{manageUser.daNe}" style="font-size: 15pt" /><br/>
+
+
                         
                         <webuijsf:button actionExpression="#{manageUser.editLab}" id="button2" text="Izmena podataka laboratorije" style = "font-size: 15pt"/>
                         
