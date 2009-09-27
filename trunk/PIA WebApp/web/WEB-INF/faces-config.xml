@@ -271,6 +271,10 @@
             <from-outcome>request_loaded</from-outcome>
             <to-view-id>/UserRequestViewPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/UserRequestViewPage.jsp</from-view-id>
@@ -285,6 +289,10 @@
         <navigation-case>
             <from-outcome>no_more_requests</from-outcome>
             <to-view-id>/NoMoreRequestsPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/RequestSelectionPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -306,6 +314,10 @@
         <navigation-case>
             <from-outcome>user_loaded</from-outcome>
             <to-view-id>/UserManagePage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -528,6 +540,13 @@
         <navigation-case>
             <from-outcome>already_reserved</from-outcome>
             <to-view-id>/AlreadyReservedPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/NoMoreRequestsPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

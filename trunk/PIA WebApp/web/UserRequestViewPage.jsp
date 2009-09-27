@@ -28,6 +28,9 @@
                     <webuijsf:form id="form2">
                         <webuijsf:button actionExpression="#{manageUser.denyRequest}" id="button1" text="Odbi zahtev za registraciju" style = "font-size: 15pt"/>
                     </webuijsf:form>
+                    <webuijsf:form id="form3">
+                        <webuijsf:button actionExpression="#{gotopage.back}" id="button1" text="Nazad" style = "font-size: 15pt"/>
+                    </webuijsf:form>
                     </DIV>
                 </webuijsf:body>
             </webuijsf:html>
