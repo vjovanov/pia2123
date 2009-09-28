@@ -7,6 +7,56 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
     <managed-bean>
+        <managed-bean-name>userBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.UserData</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>    
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>reservationIDBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.ReservationID</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>labIDBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.LabID</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>labScheduleBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.LabSchedule</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>loginBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.Login</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>labListingBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.LabListing</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>labSelectedBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.LabSelected</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>reservationListGetBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.ReservationListGet</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>reservationSelectedBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.ReservationSelected</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>reservationDeleteBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.ReservationDelete</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>labmanager</managed-bean-name>
         <managed-bean-class>com.Vojin.data.laboratory.LabManager</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
@@ -492,6 +542,10 @@
             <from-outcome>back</from-outcome>
             <to-view-id>/ReservationListPage.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>delete_success</from-outcome>
+            <to-view-id>/ReservationDeleteSuccess.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>UserReservationListPage</managed-bean-name>
@@ -683,6 +737,27 @@
         <navigation-case>
             <from-outcome>back</from-outcome>
             <to-view-id>/LabSelectedPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>ReservationDeleteSuccess</managed-bean-name>
+        <managed-bean-class>piawebapp.ReservationDeleteSuccess</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+        <from-view-id>/ReservationDeleteSuccess.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>reservations_loaded</from-outcome>
+            <to-view-id>/ReservationListPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>no_reservations</from-outcome>
+            <to-view-id>/NoMoreReservationsPage.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/ErrorPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

@@ -15,13 +15,13 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                         <webuijsf:form id="form1">
-                            <webuijsf:textField id="textfield1" label="Unesi korisnicko ime:" required="true" style="font-size: 15pt" text="#{user.username}"/>
+                            <webuijsf:textField id="textfield1" label="Unesi korisnicko ime:" required="true" style="font-size: 15pt" text="#{loginBean.username}"/>
                             <br/>
-                            <webuijsf:passwordField id="passwordField1" label="Unesi lozinku:" password="#{user.password}" required="true" style="font-size: 15pt"/>
+                            <webuijsf:passwordField id="passwordField1" label="Unesi lozinku:" password="#{loginBean.password}" required="true" style="font-size: 15pt"/>
                             <br/>
                             <br/>
                             
-                            <webuijsf:button actionExpression="#{user.userLogin}" id="button1" style="font-size: 15pt" text="Uloguj se"/>
+                            <webuijsf:button actionExpression="#{loginBean.action}" id="button1" style="font-size: 15pt" text="Uloguj se"/>
                             <br/>
                         </webuijsf:form>
                         <webuijsf:form id="form2">

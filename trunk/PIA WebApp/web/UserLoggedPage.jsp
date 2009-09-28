@@ -17,10 +17,10 @@
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
                         
-                        <h:outputText value="Dobro dosli #{user.name}" style="font-size: 20pt"/>
+                        <h:outputText value="Dobro dosli #{userBean.name}" style="font-size: 20pt"/>
                         <br/><br/><br/>
-                        <webuijsf:button actionExpression="#{labmanager.laboratoryList}" id="button1" text="Pregled i rezervacija laboratorija" style = "font-size: 15pt"/><br/>
-                        <webuijsf:button actionExpression="#{user.reservationList}" id="button2" text="Pregled rezervacija" style = "font-size: 15pt"/>
+                        <webuijsf:button actionExpression="#{labListingBean.action}" id="button1" text="Pregled i rezervacija laboratorija" style = "font-size: 15pt"/><br/>
+                        <webuijsf:button actionExpression="#{reservationListGetBean.action}" id="button2" text="Pregled rezervacija" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                         <webuijsf:button actionExpression="#{user.manageReservation}" id="button2" text="Kreiranje nove rezervacije" style = "font-size: 15pt"/>

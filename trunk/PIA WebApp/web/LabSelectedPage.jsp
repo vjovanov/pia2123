@@ -16,23 +16,23 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <h3><h:outputText value="#{labmanager.selected}" style="font-size: 23pt"/></h3>
+                        <h3><h:outputText value="#{labSelectedBean.labData.name}" style="font-size: 23pt"/></h3>
                         <br/>
                         <table width="30%" border="3">
                         <tr><td> Lokacija</td>
-                        <td><h:outputText value="#{labmanager.lab.location}" style="font-size: 15pt"/> </td></tr>
+                        <td><h:outputText value="#{labSelectedBean.labData.location}" style="font-size: 15pt"/> </td></tr>
                         <tr><td>Kapacitet:</td>
-                        <td><h:outputText value="#{labmanager.lab.capacity}" style="font-size: 15pt"/></td></tr>
+                        <td><h:outputText value="#{labSelectedBean.labData.capacity}" style="font-size: 15pt"/></td></tr>
                         <tr><td>Broj racunara:</td>
-                        <td><h:outputText value="#{labmanager.lab.pcNumber}" style="font-size: 15pt"/></td></tr>
+                        <td><h:outputText value="#{labSelectedBean.labData.pcNumber}" style="font-size: 15pt"/></td></tr>
                         <tr><td>Da li ima tablu:</td>
-                        <td><h:outputText value="#{labmanager.lab.hasBlackboard}" style="font-size: 15pt"/></td></tr>
+                        <td><h:outputText value="#{labSelectedBean.labData.hasBlackboard}" style="font-size: 15pt"/></td></tr>
                         <tr><td>Da li ima projektor:</td>
-                        <td><h:outputText value="#{labmanager.lab.hasProjector}" style="font-size: 15pt"/></td></tr>
+                        <td><h:outputText value="#{labSelectedBean.labData.hasProjector}" style="font-size: 15pt"/></td></tr>
                         </table><br/><br/>
-                        <webuijsf:calendar id="calendar" selectedDate="#{labmanager.selectedDate}" minDate="#{labmanager.dateNow}" required="true" style="font-size: 15pt" />
+                        <webuijsf:calendar id="calendar" selectedDate="#{labScheduleBean.selectedDate}" minDate="#{labSelectedBean.dateNow}" required="true" style="font-size: 15pt" />
                         <br/>
-                        <webuijsf:button actionExpression="#{labmanager.laboratoryReservation}" id="button2" text="Rezrvacija laboratorije" style = "font-size: 15pt"/>                        
+                        <webuijsf:button actionExpression="#{labScheduleBean.action}" id="button2" text="Rezrvacija laboratorije" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>

@@ -15,7 +15,7 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <h:outputText id="outputText1" value="Dobro dosli #{user.name}" style = "font-size: 20pt"/><br/>
+                        <h:outputText id="outputText1" value="Dobro dosli #{userBean.name}" style = "font-size: 20pt"/><br/>
                         <webuijsf:button actionExpression="#{manageUser.userRequestsList}" id="button1" text="Pregled zahteva za registraciju" style = "font-size: 15pt"/><br/>
                         <webuijsf:button actionExpression="#{manageUser.userListing}" id="button2" text="Pregled korisnika" style = "font-size: 15pt"/><br/>
                         <webuijsf:button actionExpression="#{gotopage.addUser}" id="button3" text="Dodavanje korisnika" style = "font-size: 15pt"/><br/>
