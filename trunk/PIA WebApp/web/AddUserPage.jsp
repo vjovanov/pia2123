@@ -2,7 +2,7 @@
 <!--
     Document   : RegisterPage
     Created on : 24.09.2009., 13.02.22
-    Author     : Administrator
+    Author     : Vojin
 -->
 <jsp:root version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
     <jsp:directive.page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"/>
@@ -15,14 +15,14 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <webuijsf:textField id="textField1" label="Korisnicko ime" required="true" text="#{manageUser.user.username}" style="font-size: 15pt"/><br/>
-                        <webuijsf:passwordField id="passwordField1" label="Lozinka" required="true" password="#{manageUser.user.password}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField2" label="Ime" required="true" text="#{manageUser.user.name}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField3" label="Prezime" required="true" text="#{manageUser.user.lastname}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField4" label="Email" required="true" text="#{manageUser.user.email}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField5" label="Funkcija na fakultetu" required="true" text="#{manageUser.user.title}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField1" label="Korisnicko ime" required="true" text="#{addUserBean.userData.username}" style="font-size: 15pt"/><br/>
+                        <webuijsf:passwordField id="passwordField1" label="Lozinka" required="true" password="#{addUserBean.userData.password}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField2" label="Ime" required="true" text="#{addUserBean.userData.name}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField3" label="Prezime" required="true" text="#{addUserBean.userData.lastname}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField4" label="Email" required="true" text="#{addUserBean.userData.email}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField5" label="Funkcija na fakultetu" required="true" text="#{addUserBean.userData.title}" style="font-size: 15pt"/><br/>
                         <br/>
-                        <webuijsf:button id="button1" actionExpression="#{manageUser.addUser}" text="Registrujte se" style = "font-size: 15pt"/>
+                        <webuijsf:button id="button1" actionExpression="#{addUserBean.action}" text="Registrujte se" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>

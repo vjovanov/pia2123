@@ -6,6 +6,7 @@
     xmlns="http://java.sun.com/xml/ns/javaee" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
     <managed-bean>
         <managed-bean-name>userBean</managed-bean-name>
         <managed-bean-class>com.Vojin.data.UserData</managed-bean-class>
@@ -24,6 +25,11 @@
     <managed-bean>
         <managed-bean-name>labScheduleBean</managed-bean-name>
         <managed-bean-class>com.Vojin.data.actionbeans.LabSchedule</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>addUserBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.AddUser</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -437,12 +443,12 @@
             <to-view-id>/ErrorPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>user_added</from-outcome>
+            <from-outcome>back</from-outcome>
             <to-view-id>/AdminLoggedPage.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>back</from-outcome>
-            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+            <from-outcome>no_error</from-outcome>
+            <to-view-id>/AddUserHandledPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -787,5 +793,16 @@
             <to-view-id>/ReservationListPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+    <managed-bean>
+        <managed-bean-name>AddUserHandledPage</managed-bean-name>
+        <managed-bean-class>piawebapp.AddUserHandledPage</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/AddUserHandledPage.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/AdminLoggedPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
