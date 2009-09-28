@@ -18,6 +18,11 @@
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>requestIDBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.RequestID</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>labIDBean</managed-bean-name>
         <managed-bean-class>com.Vojin.data.LabID</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
@@ -40,6 +45,11 @@
     <managed-bean>
         <managed-bean-name>userRequestListingBean</managed-bean-name>
         <managed-bean-class>com.Vojin.data.actionbeans.UserRequestListing</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>userRequestSelectBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.UserRequestSelect</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -815,4 +825,5 @@
             <to-view-id>/AdminLoggedPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
 </faces-config>
