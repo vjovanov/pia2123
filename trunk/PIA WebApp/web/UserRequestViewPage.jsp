@@ -17,12 +17,12 @@
                     <DIV ALIGN="center">
                     <webuijsf:form id="form1">
                        <h:outputText value="Korisnicki zahtev" style="font-size: 30pt"/><br/>
-                       <h:outputText value="Korisnicko ime: #{manageUser.userRequest.username}" style="font-size: 20pt"/><br/>
-                       <h:outputText value="Ime: #{manageUser.userRequest.name}" style="font-size: 20pt"/><br/>
-                       <h:outputText value="Prezime: #{manageUser.userRequest.lastname}" style="font-size: 20pt"/><br/>
-                       <h:outputText value="Email: #{manageUser.userRequest.email}" style="font-size: 20pt"/><br/>
-                       <h:outputText value="Funkcija na fakultetu: #{manageUser.userRequest.title}" style="font-size: 20pt"/><br/>
-                       <h:outputText value="Datum podnosenja zahteva: #{manageUser.userRequest.requestDate}" style="font-size: 20pt"/><br/>
+                       <h:outputText value="Korisnicko ime: #{userRequestSelectBean.userRequest.username}" style="font-size: 20pt"/><br/>
+                       <h:outputText value="Ime: #{userRequestSelectBean.userRequest.name}" style="font-size: 20pt"/><br/>
+                       <h:outputText value="Prezime: #{userRequestSelectBean.userRequest.lastname}" style="font-size: 20pt"/><br/>
+                       <h:outputText value="Email: #{userRequestSelectBean.userRequest.email}" style="font-size: 20pt"/><br/>
+                       <h:outputText value="Funkcija na fakultetu: #{userRequestSelectBean.userRequest.title}" style="font-size: 20pt"/><br/>
+                       <h:outputText value="Datum podnosenja zahteva: #{userRequestSelectBean.userRequest.requestDate}" style="font-size: 20pt"/><br/>
                        <webuijsf:button actionExpression="#{manageUser.acceptRequest}" id="button1" text="Prihvati zahtev za registraciju" style = "font-size: 15pt"/><br/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">

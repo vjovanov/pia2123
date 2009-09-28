@@ -33,7 +33,7 @@ public class UserRequestListing {
                 pst = conn.prepareStatement("select * from zahtevi_registracije where status=0");
                 res = pst.executeQuery();
                 while(res.next()){
-                    requestList.add(new Option(res.getString("username")));
+                    requestList.add(new Option(res.getInt("zid"), res.getString("username")));
                 }
                 if (requestList.isEmpty()){
                     result = "no_more_requests";
