@@ -22,9 +22,7 @@
                         <webuijsf:button actionExpression="#{labListingBean.action}" id="button1" text="Pregled i rezervacija laboratorija" style = "font-size: 15pt"/><br/>
                         <webuijsf:button actionExpression="#{reservationListGetBean.action}" id="button2" text="Pregled rezervacija" style = "font-size: 15pt"/>
                     </webuijsf:form>
-                    <webuijsf:form id="form2">
-                        <webuijsf:button actionExpression="#{user.manageReservation}" id="button2" text="Kreiranje nove rezervacije" style = "font-size: 15pt"/>
-                    </webuijsf:form>
+                    
                     </DIV>
                 </webuijsf:body>
             </webuijsf:html>

@@ -17,13 +17,13 @@
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
                         <h:outputText value="Izaberi laboratoriju" style="font-size: 15pt"/><br/>
-                        <webuijsf:listbox selected="#{user.selectedRes}" id="listbox1" items="#{user.lista}" style="font-size: 15pt" /><br/>
+                        <webuijsf:listbox selected="#{tryReservationBean.selectedRes}" id="listbox1" items="#{reservationPrepareBean.labList}" style="font-size: 15pt" /><br/>
                         <h:outputText value="Izaberi datum rezervacije" style="font-size: 15pt"/><br/>
-                        <webuijsf:calendar id="calendar" selectedDate="#{user.selectedDate}" minDate="#{user.dateNow}" required="true" style="font-size: 15pt" /><br/>
-                        <webuijsf:textField id="text1" label="Unesi namenu rezervacije       " required="true" style="font-size: 15pt" text="#{user.reservation.namena}"/><br/>
-                        <webuijsf:textField id="text2" label="Unesi sat pocetka              " required="true" style="font-size: 15pt" text="#{user.reservation.pocevOd}"/><br/>
-                        <webuijsf:textField id="text3" label="Unesi trajanje zeljenog termina" required="true" style="font-size: 15pt" text="#{user.reservation.trajanje}"/><br/>
-                        <webuijsf:button actionExpression="#{user.tryReservation}" id="button2" text="Rezervisi!" style = "font-size: 15pt"/>
+                        <webuijsf:calendar id="calendar" selectedDate="#{tryReservationBean.selectedDate}" minDate="#{tryReservationBean.dateNow}" required="true" style="font-size: 15pt" /><br/>
+                        <webuijsf:textField id="text1" label="Unesi namenu rezervacije       " required="true" style="font-size: 15pt" text="#{tryReservationBean.reservation.namena}"/><br/>
+                        <webuijsf:textField id="text2" label="Unesi sat pocetka              " required="true" style="font-size: 15pt" text="#{tryReservationBean.reservation.pocevOd}"/><br/>
+                        <webuijsf:textField id="text3" label="Unesi trajanje zeljenog termina" required="true" style="font-size: 15pt" text="#{tryReservationBean.reservation.trajanje}"/><br/>
+                        <webuijsf:button actionExpression="#{tryReservationBean.action}" id="button2" text="Rezervisi!" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
