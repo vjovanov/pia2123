@@ -33,6 +33,16 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>daySelectionBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.DaySelection</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>userRequestListingBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.UserRequestListing</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>registerBean</managed-bean-name>
         <managed-bean-class>com.Vojin.data.actionbeans.Register</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>

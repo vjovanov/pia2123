@@ -16,7 +16,7 @@
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
                         <h:outputText id="outputText1" value="Dobro dosli #{userBean.name}" style = "font-size: 20pt"/><br/>
-                        <webuijsf:button actionExpression="#{manageUser.userRequestsList}" id="button1" text="Pregled zahteva za registraciju" style = "font-size: 15pt"/><br/>
+                        <webuijsf:button actionExpression="#{userRequestListingBean.action}" id="button1" text="Pregled zahteva za registraciju" style = "font-size: 15pt"/><br/>
                         <webuijsf:button actionExpression="#{manageUser.userListing}" id="button2" text="Pregled korisnika" style = "font-size: 15pt"/><br/>
                         <webuijsf:button actionExpression="#{gotopage.addUser}" id="button3" text="Dodavanje korisnika" style = "font-size: 15pt"/><br/>
                         <webuijsf:button actionExpression="#{manageUser.labListing}" id="button4" text="Lista laboratorija" style = "font-size: 15pt"/><br/>
