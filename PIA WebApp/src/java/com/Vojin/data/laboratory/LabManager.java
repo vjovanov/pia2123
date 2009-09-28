@@ -9,10 +9,8 @@ import com.Vojin.data.ConnectionManager;
 import com.Vojin.data.DayShift;
 import com.Vojin.data.LaboratoryData;
 import com.Vojin.data.Schedule;
-import com.Vojin.data.user.User;
 import com.sun.webui.jsf.model.Option;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +18,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import javax.faces.context.FacesContext;
 
 
 /**

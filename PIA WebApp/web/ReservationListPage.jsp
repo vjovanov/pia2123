@@ -15,10 +15,9 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-
-                        <webuijsf:listbox selected="#{user.selected}" id="listbox1" items="#{user.lista}" style="font-size: 15pt" />
+                        <webuijsf:listbox required="true" selected="#{reservationSelectedBean.selected}" id="listbox1" items="#{reservationListGetBean.optionList}" style="font-size: 15pt" />
                         <br/>
-                        <webuijsf:button actionExpression="#{user.reservationSelected}" id="button1" text="Pogledaj rezervaciju" style = "font-size: 15pt"/><br/>
+                        <webuijsf:button actionExpression="#{reservationSelectedBean.action}" id="button1" text="Pogledaj rezervaciju" style = "font-size: 15pt"/><br/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>

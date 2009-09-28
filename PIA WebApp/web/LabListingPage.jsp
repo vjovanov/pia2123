@@ -15,9 +15,9 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <webuijsf:listbox selected="#{labmanager.selected}" id="listbox1" items="#{labmanager.lista}" style="font-size: 15pt" />
+                        <webuijsf:listbox selected="#{labSelectedBean.selected}" id="listbox1" items="#{labListingBean.labList}" style="font-size: 15pt" />
                         <br/>
-                        <webuijsf:button actionExpression="#{labmanager.laboratorySelected}" id="button1" text="Pregled izabrane laboratorije" style = "font-size: 15pt"/>                        
+                        <webuijsf:button actionExpression="#{labSelectedBean.action}" id="button1" text="Pregled izabrane laboratorije" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>

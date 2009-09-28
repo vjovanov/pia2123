@@ -16,10 +16,10 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <h:outputText id="text1" value="Sala: #{user.reservation.sala}" style="font-size: 20pt"/><br/>
-                        <h:outputText id="text2" value="Namena rezervacije: #{user.reservation.namena}" style="font-size: 20pt"/><br/>
-                        <h:outputText id="text3" value="Rezervisana dana #{user.reservation.datum} sa pocetkom u #{user.reservation.pocevOd} i trajanjem od #{user.reservation.trajanje}" style="font-size: 20pt"/><br/>
-                        <webuijsf:button actionExpression="#{user.reservationDelete}" id="button1" text="Brisanje rezervacije" style = "font-size: 15pt"/>
+                        <h:outputText id="text1" value="Sala: #{reservationSelectedBean.reservation.sala}" style="font-size: 20pt"/><br/>
+                        <h:outputText id="text2" value="Namena rezervacije: #{reservationSelectedBean.reservation.namena}" style="font-size: 20pt"/><br/>
+                        <h:outputText id="text3" value="Rezervisana dana #{reservationSelectedBean.reservation.datum} sa pocetkom u #{reservationSelectedBean.reservation.pocevOd} i trajanjem od #{reservationSelectedBean.reservation.trajanje}" style="font-size: 20pt"/><br/>
+                        <webuijsf:button actionExpression="#{reservationDeleteBean.action}" id="button1" text="Brisanje rezervacije" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
