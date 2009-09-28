@@ -19,6 +19,9 @@
                         <br/>
                         <webuijsf:button actionExpression="#{reservationSelectedBean.action}" id="button1" text="Pogledaj rezervaciju" style = "font-size: 15pt"/><br/>
                     </webuijsf:form>
+                    <webuijsf:form id="form3">
+                        <webuijsf:button actionExpression="#{reservationPrepareBean.action}" id="button3" text="Kreiranje nove rezervacije" style = "font-size: 15pt"/><br/>
+                    </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
                     </webuijsf:form>
