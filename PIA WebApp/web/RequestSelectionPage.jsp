@@ -16,7 +16,7 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                            <webuijsf:listbox rows="3" required="true" selected="#{manageUser.selectedRequest}" id="listbox1" items="#{manageUser.userList}" style="font-size: 15pt" />
+                        <webuijsf:listbox rows="3" required="true" selected="#{manageUser.selectedRequest}" id="listbox1" items="#{userRequestListingBean.requestList}" style="font-size: 15pt" />
                             <br/>
                             <webuijsf:button actionExpression="#{manageUser.selectedUserReqeust}" id="button1" text="Pregled izabranog zahteva" style = "font-size: 15pt"/><br/>
                     </webuijsf:form>
