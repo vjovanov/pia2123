@@ -27,6 +27,11 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>registerBean</managed-bean-name>
+        <managed-bean-class>com.Vojin.data.actionbeans.Register</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>loginBean</managed-bean-name>
         <managed-bean-class>com.Vojin.data.actionbeans.Login</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -782,9 +787,5 @@
             <to-view-id>/ReservationListPage.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <managed-bean>
-        <managed-bean-name>RegisterPage</managed-bean-name>
-        <managed-bean-class>piawebapp.RegisterPage</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
+    
 </faces-config>

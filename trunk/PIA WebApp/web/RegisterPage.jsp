@@ -15,14 +15,14 @@
                 <webuijsf:body id="body1" style="-rave-layout: grid">
                     <DIV ALIGN="Center">
                     <webuijsf:form id="form1">
-                        <webuijsf:textField id="textField1" label="Korisnicko ime" required="true" text="#{userReg.username}" style="font-size: 15pt"/><br/>
-                        <webuijsf:passwordField id="passwordField1" label="Lozinka" required="true" password="#{userReg.password}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField2" label="Ime" required="true" text="#{userReg.name}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField3" label="Prezime" required="true" text="#{userReg.lastname}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField4" label="Email" required="true" text="#{userReg.email}" style="font-size: 15pt"/><br/>
-                        <webuijsf:textField id="textField5" label="Funkcija na fakultetu" required="true" text="#{userReg.title}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField1" label="Korisnicko ime" required="true" text="#{registerBean.regData.username}" style="font-size: 15pt"/><br/>
+                        <webuijsf:passwordField id="passwordField1" label="Lozinka" required="true" password="#{registerBean.regData.password}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField2" label="Ime" required="true" text="#{registerBean.regData.name}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField3" label="Prezime" required="true" text="#{registerBean.regData.lastname}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField4" label="Email" required="true" text="#{registerBean.regData.email}" style="font-size: 15pt"/><br/>
+                        <webuijsf:textField id="textField5" label="Funkcija na fakultetu" required="true" text="#{registerBean.regData.title}" style="font-size: 15pt"/><br/>
                         <br/>
-                        <webuijsf:button id="button1" actionExpression="#{userReg.userRegister}" text="Registrujte se" style = "font-size: 15pt"/>
+                        <webuijsf:button id="button1" actionExpression="#{registerBean.action}" text="Registrujte se" style = "font-size: 15pt"/>
                     </webuijsf:form>
                     <webuijsf:form id="form2">
                             <webuijsf:button actionExpression="#{gotopage.back}" id="button2" text="Nazad" style = "font-size: 15pt"/>
